@@ -41,6 +41,8 @@ class PreprocessFile
       FileUtils.rm_rf(PREPROCESSED_DIRECTORY)
       Rails.logger.info "Previous preprocessed directory deleted: #{PREPROCESSED_DIRECTORY}"
     end
+
+    Rails.logger.info "Preprocessing file. Please wait..."
   end
 
   def preprocess_file

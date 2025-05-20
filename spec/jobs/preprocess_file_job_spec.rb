@@ -15,7 +15,7 @@ describe PreprocessFileJob, type: :job do
     described_class.new.perform(file_path)
 
     expect(Rails.logger).to have_received(:info).with(
-      I18n.t("services.preprocess_file.job_success", file_path: file_path)
+      "File processed in job: spec/fixtures/files/test_ascii_10MB.txt"
     )
   end
 end
