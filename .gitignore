@@ -16,6 +16,8 @@
 !/log/.keep
 !/tmp/.keep
 
+/files_in_bytesize
+
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
