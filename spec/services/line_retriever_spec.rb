@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe LineRetriever do
   let(:file_path) { "spec/fixtures/files/test_ascii_10MB.txt" }
   let(:stubbed_directory) { "spec/fixtures/files/stubbed_directory" }

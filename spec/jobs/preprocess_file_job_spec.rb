@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe PreprocessFileJob, type: :job do
   let(:filename) { "test_ascii_10MB.txt" }
   let(:file_path) { "spec/fixtures/files/#{filename}" }

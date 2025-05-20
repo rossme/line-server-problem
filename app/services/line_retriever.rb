@@ -1,3 +1,12 @@
+# frozen_string_literal: true
+
+# Service to retrieve a line from a preprocessed file based on the given index.
+#
+# @param [file_path] the path to the file to be preprocessed.
+# @return [String] the line read from the file at the specified index.
+#
+# @example LineRetriever.call(14030)
+
 class LineRetriever
   include LineOffsetHelper
   include Callable
