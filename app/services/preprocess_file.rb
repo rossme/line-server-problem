@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
+# Service to preprocess a file by creating an index of byte offsets for each line.
+# It generates a series of files containing the offsets and metadata about the original file.
+#
+# This is much more efficient than reading the entire file into memory.
+# The files are stored in a directory named "files_in_bytesize" and are named with a specific format.
+#
+# @param [file_path] the path to the file to be preprocessed.
+# @return [void]
+#
+# @example PreprocessFile.call("path/to/file.txt")
+
 class PreprocessFile
   include Callable
 

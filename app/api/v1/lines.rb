@@ -1,16 +1,29 @@
 # frozen_string_literal: true
 
-# GET /lines/<index>
-#   Returns an HTTP status of 200 and the text of the requested line or an HTTP 413 status if the requested line is beyond the end of the file.
+# Returns an HTTP status of 200 and the text of the requested line.
+# Returns an HTTP status of 413 if the requested line is outside the bounds of the file.
+# This endpoint is mounted in the `routes.rb` file.
+#
+# @param [index] the index of the line to retrieve.
+# @example GET /lines/12345678
 
 module V1
   class Lines < Grape::API
     include V1::Defaults
 
     resource :lines do
-      desc "GET /lines/<index>"
+      desc "GET /lines/<index>", {
+        summary: "Retrieve a specific line by index",
+        success: [
+          { code: 200 }
+        ],
+        failure: [
+          { code: 400 },
+          { code: 413 }
+        ]
+      }
       params do
-        requires :index, type: Integer, desc: "Line index"
+        requires :index, type: Integer, desc: "The index of the line to retrieve"
       end
       route_param :index do
         get do

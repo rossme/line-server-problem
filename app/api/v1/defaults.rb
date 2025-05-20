@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+# This module is part of the API V1.
+# It provides default settings and error handling statuses for the API.
+#
+# @see V1::Lines
+
 module V1
   module Defaults
     extend ActiveSupport::Concern

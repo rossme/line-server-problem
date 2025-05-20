@@ -1,3 +1,11 @@
+# frozen_string_literal: true
+
+# Helper module to manage line offsets in a file.
+# This module provides methods to validate the index of a line in a file,
+# check if the original file has been modified, and handle offsets and metadata.
+#
+# @see LineRetriever
+
 module LineOffsetHelper
   PREPROCESSED_FILENAME = PreprocessFile::PREPROCESSED_FILENAME
   PREPROCESSED_BATCH_SIZE = PreprocessFile::PREPROCESSED_BATCH_SIZE
