@@ -12,9 +12,18 @@ module V1
     include V1::Defaults
 
     resource :lines do
-      desc "GET /lines/<index>"
+      desc "GET /lines/<index>", {
+        summary: "Retrieve a specific line by index",
+        success: [
+          { code: 200 }
+        ],
+        failure: [
+          { code: 400 },
+          { code: 413 }
+        ]
+      }
       params do
-        requires :index, type: Integer, desc: "Line index"
+        requires :index, type: Integer, desc: "The index of the line to retrieve"
       end
       route_param :index do
         get do
