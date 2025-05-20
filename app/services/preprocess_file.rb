@@ -39,7 +39,7 @@ class PreprocessFile
   def delete_preprocessed_directory_if_exists
     if Dir.exist?(PREPROCESSED_DIRECTORY)
       FileUtils.rm_rf(PREPROCESSED_DIRECTORY)
-      Rails.logger.info I18n.t("services.preprocess_file.delete_success", directory_path: PREPROCESSED_DIRECTORY)
+      Rails.logger.info "Previous preprocessed directory deleted: #{PREPROCESSED_DIRECTORY}"
     end
   end
 
@@ -54,7 +54,7 @@ class PreprocessFile
         offsets << f.tell - line.bytesize
       end
     rescue EOFError
-      Rails.logger.warn I18n.t("services.preprocess_file.warn_eof", file_path: file_path)
+      Rails.logger.warn "File #{file_path} end of file reached"
     end
   end
 
@@ -76,7 +76,7 @@ class PreprocessFile
       end
     end
 
-    Rails.logger.info I18n.t("services.preprocess_file.success", file_path: file_path)
+    Rails.logger.info "File processed: #{file_path} with metadata"
   end
 
   def metadata
@@ -90,6 +90,6 @@ class PreprocessFile
   def handle_error(error)
     delete_preprocessed_directory_if_exists
 
-    Rails.logger.info I18n.t("services.preprocess_file.error", error: error.message)
+    Rails.logger.info "Error while preprocessing file #{error.message}"
   end
 end

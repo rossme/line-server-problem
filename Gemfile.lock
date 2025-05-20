@@ -443,6 +443,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
+  dotenv
   falcon (~> 0.51.1)
   grape (~> 2.3)
   kamal

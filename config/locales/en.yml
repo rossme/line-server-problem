@@ -30,12 +30,6 @@
 en:
   hello: "Hello world"
   services:
-    preprocess_file:
-      error: "Error while preprocessing file %{error}"
-      warn_eof: "File %{file_path} end of file reached"
-      success: "File processed: %{file_path} with metadata"
-      job_success: "File processed in job: %{file_path}"
-      delete_success: "Previous preprocessed directory deleted: %{directory_path}"
     file_line_finder:
       line_byte_from_file: "Reading file line from byte %{byte}"
       file_not_found: "Preprocessed file not found"
