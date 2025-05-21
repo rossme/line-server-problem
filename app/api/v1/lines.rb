@@ -11,6 +11,8 @@ module V1
   class Lines < Grape::API
     include V1::Defaults
 
+    format :json
+
     resource :lines do
       desc "GET /lines/<index>", {
         summary: "Retrieve a specific line by index",
@@ -30,7 +32,7 @@ module V1
           response = LineRetriever.call(params[:index])
 
           if response&.success?
-            present response.object
+            { line: response.object, status: 200 }
           else
             api_error!(response&.error || "Unexpected error")
           end
