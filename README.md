@@ -69,8 +69,8 @@ During preprocessing, the application will create a directory called `/files_in_
 Depending on the size of the file, this directory will take up approximately 1/10 of the size of the original file.
 
 - The 10MB file takes approximately 1MB of space in the `/files_in_bytesize` directory. Processing time is around 250ms.
-- The 100MB file takes approximately 10MB of space in the `/files_in_bytesize` directory. Processing time is around 2500ms.
-- The 1GB file takes approximately 100MB of space in the `/files_in_bytesize` directory. Processing time is around 25000ms.
+- The 1GB file takes approximately 100MB of space in the `/files_in_bytesize` directory. Processing time is around 27500ms.
+- The 10GB file takes approximately 1GB of space in the `/files_in_bytesize` directory. Processing time is around 250000ms.
 
 The `PreprocessFile` service efficiently preprocesses a large `.txt` file by creating an index of byte offsets
 for each line without loading the entire file into memory.
