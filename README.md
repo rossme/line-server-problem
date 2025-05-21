@@ -154,3 +154,15 @@ Grape API is used to define the endpoints and handle the requests. The API is de
 
 I used `bash` to write the `build.sh` and `run.sh` scripts. I have not worked with `bash` before,
 so this was a nice learning experience. Disclaimer - I used `GPT 4o` to help me write the scripts.
+
+### Critique and notes on this exercise
+
+Firstly, this was a really fun project to work on. I learned a lot more about Ruby, Marshal, and File I/O.
+I also learned a lot about how to use `Rails.cache` and `Falcon`.
+
+I am not sure if the `PreprocessFile` service is the best way to preprocess the file or if there is a better way to do it.
+One alternative approach could be to use a database to store the lines and their offsets, this would be much more efficient
+but a lot less interesting.
+
+I think the current approach is a good balance between performance and simplicity.
+And it certainly gives us something to discuss...
