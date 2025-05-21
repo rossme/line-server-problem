@@ -147,3 +147,8 @@ Grape API is used to define the endpoints and handle the requests. The API is de
 - `falcon`: The fibre HTTP server used for serving the application (this replaces `puma` threads).
 - `dotenv`: The gem used for loading environment variables from a `.env` file.
 - `grape`: The API framework used for building the RESTful API.
+
+### A note on Bash and GPT 4o
+
+I used `bash` to write the `build.sh` and `run.sh` scripts. I have not worked with `bash` before,
+so this was a nice learning experience. Disclaimer - I used `GPT 4o` to help me write the scripts.
