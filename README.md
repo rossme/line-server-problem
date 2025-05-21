@@ -87,7 +87,9 @@ The `LineRetriever` service retrieves a specific line from the preprocessed file
 It reads the relevant binary file containing the index of byte offsets and uses the offset to seek directly to the line in the original file.
 This approach minimizes memory usage and improves performance by avoiding the need to load the entire file into memory.
 
-#### A note on Marshal
+### Marshal
+
+I read this [AppSignal blog post](https://blog.appsignal.com/2019/03/26/object-marshalling-in-ruby.html) on using [Marshal](https://docs.ruby-lang.org/en/3.4/marshal_rdoc.html).
 
 The `PreprocessFile` service uses `Marshal.dump` to serialize the index of byte offsets for each line.
 I have not worked with `Marshal` before, so this was a nice learning experience. Perhaps it is not really needed,
