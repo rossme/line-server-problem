@@ -10,7 +10,7 @@ module V1
     extend ActiveSupport::Concern
 
     included do
-      version "v1", using: :header, vendor: "salsify"
+      version "v1", using: :header, vendor: "line-server-problem"
 
       helpers do
         def api_error!(error)
