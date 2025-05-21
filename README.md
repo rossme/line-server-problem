@@ -62,8 +62,8 @@ If the line index is out of range, it will return the status code `413` with the
 
 You can use these example files from Google Drive to test the application:
 - [10MB .txt file](https://drive.google.com/file/d/14IfL9SaOG_ILZTcnmKjKh7vGKMH2WHnu/view?usp=drive_link)
-- [100MB .txt file](https://drive.google.com/file/d/1v6E_Fnnd5flSZEOzXRgYszakNLihirtZ/view?usp=drive_link)
-- [1GB .txt file](https://drive.google.com/file/d/1gE8qxFii838ELR1gAsK84iOl-XJLQf2_/view?usp=drive_link)
+- [1GB .txt file](https://drive.google.com/file/d/1v6E_Fnnd5flSZEOzXRgYszakNLihirtZ/view?usp=drive_link)
+- [10GB .txt file](https://drive.google.com/file/d/1gE8qxFii838ELR1gAsK84iOl-XJLQf2_/view?usp=drive_link)
 
 During preprocessing, the application will create a directory called `/files_in_bytesize` in the root of the project.
 Depending on the size of the file, this directory will take up approximately 1/10 of the size of the original file.
