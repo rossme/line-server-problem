@@ -38,7 +38,7 @@ Once the file is preprocessed, the server will be ready to serve requests.
 The server will be available at `http://localhost:3000`. You can access the endpoints
 in [Postman](https://www.postman.com/) or any other API testing tool. Please note that the indexing of the lines begins at `0`.
 
-```json
+```bash
   GET "/lines/<line_index>"
 ```
 This will return the line at the specified index with the status code `200` if the line exists.:
