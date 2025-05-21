@@ -58,7 +58,7 @@ If the line index is out of range, it will return the status code `413` with the
   }
 ```
 
-### File Preprocessing
+## File Preprocessing
 
 You can use these example files to test the application:
 [10MB .txt file](https://drive.google.com/file/d/14IfL9SaOG_ILZTcnmKjKh7vGKMH2WHnu/view?usp=drive_link)
@@ -81,13 +81,13 @@ This enables faster and more memory-efficient access to specific lines with the 
 The service ensures any previous preprocessing output is removed before starting,
 handles errors gracefully, and logs the entire process for visibility.
 
-### Line Retrieval
+## Line Retrieval
 
 The `LineRetriever` service retrieves a specific line from the preprocessed file using the byte offset index.
 It reads the relevant binary file containing the index of byte offsets and uses the offset to seek directly to the line in the original file.
 This approach minimizes memory usage and improves performance by avoiding the need to load the entire file into memory.
 
-### Marshal
+## Marshal
 
 I read this [AppSignal blog post](https://blog.appsignal.com/2019/03/26/object-marshalling-in-ruby.html) on using [Marshal](https://docs.ruby-lang.org/en/3.4/marshal_rdoc.html).
 
@@ -100,26 +100,27 @@ Ruby objects into a byte stream that can be stored in a file or sent over a netw
 
 The `LineRetriever` service uses `Marshal.load` to deserialize the index of byte offsets for each line.
 
-### Cache memory store
+## Cache memory store
 
 The application uses `Rails.cache` to store the relevant bytesize file. This means that if the endpoint is called
 with an index range (within 100,000) that has already been processed, the application will not need to read the file again.
 It will check the cache first and if the file is not in the cache, it will read the file and store it in the cache.
 
-### Falcon
+## Falcon
+
 The application uses `Falcon` as the HTTP server. Falcon is a fast, concurrent HTTP server for Ruby using fibres instead of threads.
 I first read about using `falcon` in Vladimir Dementyev's book [Layered Design for Ruby on Rails Applications](https://www.amazon.com/Layered-Design-Ruby-Rails-Applications/dp/1801813787)
 and I thought it would be a good idea to try it out. It is a great alternative to `puma` but
 I would need to implement this further to see how it performs in the real world. For example we would probably need to
 use the gem `async-http` to make it work with `falcon` as the HTTP client.
 
-### Logging
+## Logging
 
 The application uses `Rails.logger` to log the requests and responses. The logs are
 stored in the `log/development.log` file. You can check the logs in the terminal and see the requests
 and responses being processed by the server.
 
-### Testing
+## Testing
 
 The project uses [RSpec](https://rspec.info/) for testing. You can run the tests using the following command:
 
@@ -130,7 +131,7 @@ The project uses [RSpec](https://rspec.info/) for testing. You can run the tests
 The tests will also be run automatically when you run the `build.sh` script.
 The tests are located in the `spec` directory and cover the main functionality of the application.
 
-### Endpoints
+## Endpoints
 
 The application provides the following endpoints:
 - `GET /lines/<line_index>`: Returns the line at the specified index. The index param is
@@ -141,7 +142,7 @@ The application provides the following endpoints:
 
 Grape API is used to define the endpoints and handle the requests. The API is defined in the `app/api/v1/lines.rb` file.
 
-### Libraries
+## Libraries
 
 - `rails`: Rails 8 web framework used for building the application.
 - `redis`: The Redis client for Ruby, used for queue management.
@@ -150,12 +151,12 @@ Grape API is used to define the endpoints and handle the requests. The API is de
 - `dotenv`: The gem used for loading environment variables from a `.env` file.
 - `grape`: The API framework used for building the RESTful API.
 
-### A note on Bash and GPT 4o
+## A note on Bash and GPT 4o
 
 I used `bash` to write the `build.sh` and `run.sh` scripts. I have not worked with `bash` before,
 so this was a nice learning experience. Disclaimer - I used `GPT 4o` to help me write the scripts.
 
-### Critique and notes on this exercise
+## Critique and notes on this exercise
 
 Firstly, this was a really fun project to work on. I learned a lot more about Ruby, Marshal, and File I/O.
 I also learned a lot about how to use `Rails.cache` and `Falcon`.
