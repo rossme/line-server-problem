@@ -144,7 +144,7 @@ The application provides the following endpoints:
 
 - This endpoint is fast and responds in around 15-20ms.
 
-Grape API is used to define the endpoints and handle the requests. The API is defined in the `app/api/v1/lines.rb` file.
+[Grape API](https://github.com/ruby-grape/grape) is used to define the endpoints and handle the requests. The API is defined in the `app/api/v1/lines.rb` file.
 
 ## Libraries
 
