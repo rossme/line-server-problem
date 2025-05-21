@@ -35,4 +35,15 @@ else
   bundle update --bundler
 fi
 
+# Run the tests with RSpec
+echo "Running tests..."
+
+if ! rspec; then
+  echo "Tests failed. Please fix the issues before proceeding."
+  exit 1
+fi
+
+echo "Tests passed successfully."
 echo "Build process complete."
+echo "You can now preprocess the file and run the server with the following command:"
+echo "  ./run.sh <file_path>"
