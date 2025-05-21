@@ -3,7 +3,7 @@
 ## Motivation
 
 This project is one solution to the [Line Server Problem](https://salsify.github.io/line-server.html).
-Then a `.txt` file is provided with a large number of lines; the goal is to create a server that can
+A text file with a large number of lines is preprocessed; the goal is to create a server that can
 efficiently retrieve specific lines from the file without loading the entire file into memory.
 
 ## Installation
