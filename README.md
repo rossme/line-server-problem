@@ -83,6 +83,10 @@ The `LineRetriever` service retrieves a specific line from the preprocessed file
 It reads the relevant binary file containing the index of byte offsets and uses the offset to seek directly to the line in the original file.
 This approach minimizes memory usage and improves performance by avoiding the need to load the entire file into memory.
 
+### File modification validation
+
+The `LineRetriever` service also validates that the original text file has not been modified since the file was preproccesed. If it was modified then an exception is raised.
+
 ## Marshal
 
 I read this [AppSignal blog post](https://blog.appsignal.com/2019/03/26/object-marshalling-in-ruby.html) on using [Marshal](https://docs.ruby-lang.org/en/3.4/marshal_rdoc.html).
