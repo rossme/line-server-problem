@@ -106,6 +106,10 @@ The application uses `Rails.cache` to store the relevant bytesize file. This mea
 with an index range (within 100,000) that has already been processed, the application will not need to read the file again.
 It will check the cache first and if the file is not in the cache, it will read the file and store it in the cache.
 
+## File comments
+
+There are extensive comments in the code to explain what each part of the code does.
+
 ## Falcon
 
 The application uses `Falcon` as the HTTP server. Falcon is a fast, concurrent HTTP server for Ruby using fibres instead of threads.
