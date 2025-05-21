@@ -25,17 +25,13 @@ It will also run the tests with `RSpec` to ensure everything is working correctl
 You can then run the application using the following command.
 
 ```bash
-  ./run.sh <file_path>
+  ./run.sh /path/to/file
 ```
 
 This will start the Rails server where a background worker `PreprocessFileJob` will preprocess the file during initialization.
 Once the file is preprocessed, the server will be ready to serve requests.
 
-```bash
-  ./run.sh /path/to/file
-```
-
-The server will be available at `http://localhost:3000`. You can access the endpoints
+The server is available at `http://localhost:3000`. You can access the endpoints
 in [Postman](https://www.postman.com/) or any other API testing tool. Please note that the indexing of the lines begins at `0`.
 
 ```bash
