@@ -6,6 +6,16 @@ This project is one solution to the [Line Server Problem](https://salsify.github
 A text file with a large number of lines is preprocessed; the goal is to create a server that can
 efficiently retrieve specific lines from the file without loading the entire file into memory.
 
+## Raspberry Pi & Cloudflare
+If you would like to test the `GET /lines/<line_index>` endpoint remotely, I have a Raspberry Pi 5 with 16GB of RAM
+running this project through a Cloudflare tunnel (if my Pi is powered on!)
+
+You can find the `GET /lines/<line_index>` endpoint here:
+- [lsp.run.foo/lines/<line_index>](https://lsp.run.foo/lines/1000)
+- Please note that you may need to refresh the browser if Cloudflare/Pi are not behaving as expected.
+
+Or alternatively you can run this project locally (see below).
+
 ## Installation
 
 This project uses Ruby: 3.2.2 and Ruby on Rails: 8.0.2. To set up the project, follow these steps:
