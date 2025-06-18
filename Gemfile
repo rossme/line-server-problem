@@ -52,6 +52,6 @@ group :development, :test do
   gem "dotenv"
 end
 
-gem "grape", "~> 2.3"
+gem "grape", "~> 2.4"
 
 gem "rubyzip"
