@@ -6,7 +6,7 @@ gem "rails", "~> 8.0.2"
 gem "sqlite3", ">= 2.1"
 
 # Falcon - multiprocess, multi-fibre rack-compatible HTTP server replacing thread-based servers like Puma
-gem "falcon", "~> 0.51.1"
+gem "falcon", "~> 0.52.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
